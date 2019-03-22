@@ -10,10 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: Outlets
+    @IBOutlet weak var RedSlider: UISlider!
+    @IBOutlet weak var BlueSlider: UISlider!
+    @IBOutlet weak var GreenSlider: UISlider!
+    @IBOutlet weak var colorView: UIView!
+    
+    
+    //MARK: View cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
+    
+    //MARK: Actions
+    @IBAction func changeColor (_ sender: AnyObject){
+        
+        let red : CGFloat = CGFloat(RedSlider.value)
+        let blue: CGFloat = CGFloat(BlueSlider.value)
+        let green: CGFloat = CGFloat(GreenSlider.value)
+        
+         colorView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        
+    }
+    
 
 
 }
